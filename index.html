@@ -85,11 +85,6 @@
 				throw new Error(data.message || "Feed fetch failed");
 			}
 
-			// 채널 아바타 설정
-			const avatar = data.feed.image || `https://yt3.googleusercontent.com/ytc/${channel.id}=s176-c-k-c0x00ffffff-no-rj`;
-			const avatarEl = document.getElementById(`avatar-${channel.feedId}`);
-			if (avatarEl) avatarEl.src = avatar;
-
 			// 통계 표시
 			const statEl = document.getElementById(`stat-${channel.feedId}`);
 			if (statEl) statEl.textContent = `${data.items.length}개의 영상 | ${data.feed.title}`;
